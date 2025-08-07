@@ -7,9 +7,9 @@ cd $(dirname $0)
 SOURCE=$(pwd)/android
 CCACHE=$(pwd)/ccache
 CONTAINER_HOME=/home/build
-CONTAINER=lineageos-huawei-honor-4x
-REPOSITORY=stucki/lineageos
-TAG=lineage-15.1
+CONTAINER=lineageos-samsung-gt-i9500
+REPOSITORY=david921518/lineageos
+TAG=cm-14.1
 FORCE_BUILD=0
 PRIVILEGED=
 ENVIRONMENT=
