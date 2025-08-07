@@ -10,6 +10,8 @@ ENV \
     CCACHE_DIR=/srv/ccache \
     USE_CCACHE=1 \
     CCACHE_COMPRESS=1 \
+# use tsinghua mirror repo
+    REPO_UTL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo' \
 # Extra include PATH, it may not include /usr/local/(s)bin on some systems
     PATH=$PATH:/usr/local/bin/
 
@@ -73,7 +75,10 @@ RUN \
     useradd --gid $hostgid --uid $hostuid --non-unique build && \
     rsync -a /etc/skel/ /home/build/
 
-RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo \
+# RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo \
+#  && chmod a+x /usr/local/bin/repo
+
+RUN curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo > /usr/local/bin/repo \
  && chmod a+x /usr/local/bin/repo
 
 # Add sudo permission

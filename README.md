@@ -17,7 +17,7 @@ The main working directory is a shared folder on the host system, so the Docker 
 * If an image does not exist, ```docker build``` is executed first
 
 ```
-git clone https://github.com/stucki/docker-lineageos.git
+git clone https://github.com/david921518/docker-lineageos.git
 cd docker-lineageos
 ./run.sh
 ```
@@ -42,20 +42,19 @@ If you're on Linux and want to use adb from within the container running with `-
 * For China Mainland users please use mirror server
 
 ```
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
-git lfs install
+git config --global user.email "david921518@qq.com"
+git config --global user.name "david921518"
 
-export REPO_URL='https://mirrors.ustc.edu.cn/aosp/git-repo'
+export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo'
 
 git config --global url."https://mirrors.ustc.edu.cn/aosp/".insteadOf https://android.googlesource.com/
 git config --global url."https://gitclone.com/github.com/LineageOS/".insteadOf https://github.com/LineageOS/
 
-repo init -u https://mirrors.cernet.edu.cn/lineageOS/LineageOS/android.git -b lineage-15.1 --git-lfs --no-clone-bundle
-repo sync -c -j 16
+repo init -u https://mirrors.cernet.edu.cn/lineageOS/LineageOS/android.git -b lineage-15.1
+repo sync -c -j 4
 source build/envsetup.sh
-breakfast <device codename>   # example: breakfast grouper
-brunch <device codename>      # example: brunch grouper
+breakfast <device codename>   # example: breakfast cherry
+brunch <device codename>      # example: brunch cherry
 ```
 
 * For others
