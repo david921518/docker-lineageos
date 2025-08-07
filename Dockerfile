@@ -1,7 +1,7 @@
 # Build environment for LineageOS
 
-FROM ubuntu:16.04
-MAINTAINER Michael Stucki <michael@stucki.io>
+FROM ubuntu:20.04
+MAINTAINER Tang Hui (David) <david921518@qq.com>
 
 
 ENV \
@@ -38,7 +38,7 @@ RUN sed -i 's/main$/main universe/' /etc/apt/sources.list \
       libncurses5-dev \
       libsdl1.2-dev \
       libssl-dev \
-      libwxgtk3.0-dev \
+      libwxgtk3.0-gtk3-dev \
       libxml2 \
       libxml2-utils \
       lzop \

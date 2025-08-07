@@ -37,6 +37,29 @@ If you're on Linux and want to use adb from within the container running with `-
 
 ### How to build LineageOS for your device
 
+**NOTES:**
+
+* For China Mainland users please use mirror server
+
+```
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+git lfs install
+
+export REPO_URL='https://mirrors.ustc.edu.cn/aosp/git-repo'
+
+git config --global url."https://mirrors.ustc.edu.cn/aosp/".insteadOf https://android.googlesource.com/
+git config --global url."https://gitclone.com/github.com/LineageOS/".insteadOf https://github.com/LineageOS/
+
+repo init -u https://mirrors.cernet.edu.cn/lineageOS/LineageOS/android.git -b lineage-15.1 --git-lfs --no-clone-bundle
+repo sync -c -j 16
+source build/envsetup.sh
+breakfast <device codename>   # example: breakfast grouper
+brunch <device codename>      # example: brunch grouper
+```
+
+* For others
+
 ```
 repo init -u git://github.com/lineageos/android.git -b lineage-15.1
 repo sync -c -j 16
