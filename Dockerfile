@@ -11,7 +11,7 @@ ENV \
     USE_CCACHE=1 \
     CCACHE_COMPRESS=1 \
 # use tsinghua mirror repo
-    REPO_UTL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo' \
+    REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo' \
 # Extra include PATH, it may not include /usr/local/(s)bin on some systems
     PATH=$PATH:/usr/local/bin/
 
@@ -30,6 +30,7 @@ RUN sed -i 's/main$/main universe/' /etc/apt/sources.list \
       g++-multilib \
       gcc-multilib \
       git \
+      git-lfs \
       gnupg \
       gperf \
       imagemagick \
