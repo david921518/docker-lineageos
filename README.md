@@ -50,8 +50,8 @@ export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo'
 git config --global url."https://mirrors.ustc.edu.cn/aosp/".insteadOf https://android.googlesource.com/
 git config --global url."https://gitclone.com/github.com/LineageOS/".insteadOf https://github.com/LineageOS/
 
-repo init -u https://mirrors.cernet.edu.cn/lineageOS/LineageOS/android.git -b cm-14.1
-repo sync -c -j 4
+repo init -u https://mirrors.cernet.edu.cn/lineageOS/LineageOS/android.git -b cm-14.1 --git-lfs --no-clone-bundle
+repo sync -c -j 4 --force-sync
 source build/envsetup.sh
 breakfast <device codename>   # example: breakfast grouper
 brunch <device codename>      # example: brunch grouper
