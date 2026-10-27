@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Remove CM-specific repositories -->
+  <!--remove-project name="LineageOS/android_packages_apps_Updater" /-->
+
+  <!--project path="bootable/recovery-twrp" name="omnirom/android_bootable_recovery" remote="github" revision="android-9.0" groups="pdk-cw-fs"/-->
+
+  <!--project path="external/busybox" name="david921518/android_external_busybox" /-->
+  <!--project path="external/stlport" name="david921518/android_external_stlport" /-->
+
+  <project path="hardware/samsung" name="david921518/android_hardware_samsung" remote="github" revision="lineage-16.0"/>
+
+  <!--project path="packages/apps/SamsungServiceMode" name="david921518/android_packages_apps_SamsungServiceMode" /-->
+
+  <!-- Samsung Galaxy S4 Exynos Repositories -->
+  <project path="device/samsung/exynos5410-common" name="david921518/android_device_samsung_exynos5410-common" remote="github" revision="lineage-16.0"/>
+  <project path="device/samsung/ja3gxx" name="david921518/android_device_samsung_ja3gxx" remote="github" revision="lineage-16.0"/>
+  <project path="device/samsung/universal5420-common" name="david921518/android_device_samsung_universal5420-common" remote="github" revision="lineage-16.0"/>
+
+  <project path="kernel/samsung/exynos5410" name="david921518/android_kernel_samsung_exynos5410" remote="github" revision="lineage-16.0"/>
+
+  <project path="vendor/samsung" name="david921518/exynos5410_proprietary_vendor_samsung" remote="github" revision="lineage-16.0"/>
+
+  <project path="hardware/samsung_slsi/exynos" name="david921518/android_hardware_samsung_slsi_exynos" remote="github" revision="lineage-16.0"/>
+  <project path="hardware/samsung_slsi/exynos5" name="david921518/android_hardware_samsung_slsi_exynos5" remote="github" revision="lineage-16.0"/>
+  <project path="hardware/samsung_slsi/exynos5410" name="david921518/android_hardware_samsung_slsi_exynos5410" remote="github" revision="lineage-16.0"/>
+  <project path="hardware/samsung_slsi/openmax" name="david921518/android_hardware_samsung_slsi_openmax" remote="github" revision="lineage-16.0"/>
+
+</manifest>

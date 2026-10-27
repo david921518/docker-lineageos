@@ -10,8 +10,6 @@ ENV \
     CCACHE_DIR=/srv/ccache \
     USE_CCACHE=1 \
     CCACHE_COMPRESS=1 \
-# use tsinghua mirror repo
-    REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/' \
 # Extra include PATH, it may not include /usr/local/(s)bin on some systems
     PATH=$PATH:/usr/local/bin/
 
@@ -20,6 +18,7 @@ RUN sed -i 's/main$/main universe/' /etc/apt/sources.list \
  && apt-get update \
  && apt-get upgrade -y \
  && apt-get install -y \
+      apt-utils \
 # Install build dependencies (source: https://wiki.cyanogenmod.org/w/Build_for_bullhead)
       bc \
       bison \
@@ -30,6 +29,7 @@ RUN sed -i 's/main$/main universe/' /etc/apt/sources.list \
       g++-multilib \
       gcc-multilib \
       git \
+      git-lfs \
       gnupg \
       gperf \
       imagemagick \
@@ -37,6 +37,7 @@ RUN sed -i 's/main$/main universe/' /etc/apt/sources.list \
       lib32readline-dev \
       lib32z1-dev \
       liblz4-tool \
+      libncurses5 \
       libncurses5-dev \
       libsdl1.2-dev \
       libssl-dev \
@@ -78,8 +79,8 @@ RUN \
 # RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo \
 #  && chmod a+x /usr/local/bin/repo
 
-RUN curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo > /usr/local/bin/repo \
- && chmod a+x /usr/local/bin/repo
+# RUN curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo > /usr/local/bin/repo \
+#  && chmod a+x /usr/local/bin/repo
 
 # Add sudo permission
 RUN echo "build ALL=NOPASSWD: ALL" > /etc/sudoers.d/build
