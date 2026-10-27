@@ -41,6 +41,7 @@ RUN sed -i 's/main$/main universe/' /etc/apt/sources.list \
       libncurses5-dev \
       libsdl1.2-dev \
       libssl-dev \
+      libtinfo5 \
       libwxgtk3.0-gtk3-dev \
       libxml2 \
       libxml2-utils \

@@ -7,6 +7,7 @@ sudo apt-get install -y python2
 sudo apt-get install -y python-is-python2
 #sudo apt-get install -y python-is-python3
 sudo apt-get install -y libncurses5
+sudo apt-get install -y libtinfo5
 sudo apt-get install -y git-lfs
 
 #sudo nano /etc/java-8-openjdk/security/java.security
