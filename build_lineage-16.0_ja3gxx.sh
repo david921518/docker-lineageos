@@ -45,6 +45,10 @@ repo sync -c -j1 --force-sync
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 #3) Apply all Patches
+cd bootable
+ln -s recovery-twrp recovery
+cd ..
+
 
 source build_ja3gxx_env
 

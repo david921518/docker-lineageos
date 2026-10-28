@@ -2,11 +2,14 @@
 <manifest>
 
   <!-- Remove CM-specific repositories -->
-  <!--remove-project name="LineageOS/android_packages_apps_Updater" /-->
+  <remove-project name="LineageOS/android_packages_apps_Updater" />
+  <remove-project name="LineageOS/android_bootable_recovery" />
 
+  <project path="bootable/recovery-twrp" name="david921518/omnirom_android_bootable_recovery" remote="github" revision="android-9.0" groups="pdk-cw-fs"/>
   <!--project path="bootable/recovery-twrp" name="omnirom/android_bootable_recovery" remote="github" revision="android-9.0" groups="pdk-cw-fs"/-->
 
-  <!--project path="external/busybox" name="david921518/android_external_busybox" /-->
+  <project path="external/busybox" name="david921518/LineageOS_android_external_busybox" remote="github" revision="lineage-16.0"/>
+  <!--project path="external/busybox" name="omnirom/android_external_busybox" remote="github" revision="android-9.0"/-->
   <!--project path="external/stlport" name="david921518/android_external_stlport" /-->
 
   <project path="hardware/samsung" name="david921518/android_hardware_samsung" remote="github" revision="lineage-16.0"/>
