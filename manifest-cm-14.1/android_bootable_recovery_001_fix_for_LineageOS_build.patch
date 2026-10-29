@@ -1,0 +1,42 @@
+commit 59d9f3f9e5648d95382a3a381cb8885cae74618d
+Author: dianlujitao <dianlujitao@lineageos.org>
+Date:   Fri Feb 24 15:32:57 2017 +0800
+
+    Fix for LineageOS build
+    
+     * Match LineageOS cryptfs_hw location
+    
+    Change-Id: I5bc1399602f59f4d22827ff7e47acb901b1e33c6
+
+diff --git a/Android.mk b/Android.mk
+index 85cdd325..3700d751 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -176,6 +176,10 @@ ifeq ($(AB_OTA_UPDATER),true)
+     LOCAL_ADDITIONAL_DEPENDENCIES += libhardware
+ endif
+ 
++ifeq ($(shell test $(CM_PLATFORM_SDK_VERSION) -ge 6; echo $$?),0)
++    TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
++endif
++
+ LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/sbin
+ 
+ #ifeq ($(TARGET_RECOVERY_UI_LIB),)
+diff --git a/prebuilt/Android.mk b/prebuilt/Android.mk
+index f88f48fb..17ee07bc 100644
+--- a/prebuilt/Android.mk
++++ b/prebuilt/Android.mk
+@@ -167,7 +167,11 @@ ifeq ($(TW_INCLUDE_CRYPTO), true)
+     RELINK_SOURCE_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/libhardware.so
+     RELINK_SOURCE_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/libgpt_twrp.so
+     ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
+-        RELINK_SOURCE_FILES += $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libcryptfs_hw.so
++        ifeq ($(shell test $(CM_PLATFORM_SDK_VERSION) -ge 6; echo $$?),0)
++            RELINK_SOURCE_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/libcryptfs_hw.so
++        else
++            RELINK_SOURCE_FILES += $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libcryptfs_hw.so
++        endif
+     endif
+     # FBE files
+     ifeq ($(TW_INCLUDE_CRYPTO_FBE), true)
