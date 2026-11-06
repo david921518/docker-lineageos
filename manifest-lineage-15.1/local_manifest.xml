@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+  <!-- Huawei Honor 4X Repositories -->
+  <!--project path="kernel/huawei/msm8916" name="LineageOS/android_kernel_huawei_msm8916" remote="github" revision="lineage-15.1"/-->
+  <project path="vendor/huawei" name="TheMuppets/proprietary_vendor_huawei" remote="github" revision="lineage-15.1" />
+
 </manifest>
